@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stanley Frankle Lim - Futuristic Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <nav class="navbar glass-effect">
+        <div class="logo glitch-text">Stanley<span>Frankle</span></div>
+        <ul class="nav-links">
+            <li><a href="#home" class="neon-link">Home</a></li>
+            <li><a href="#about" class="neon-link">About</a></li>
+            <li><a href="#skills" class="neon-link">Skills</a></li>
+            <li><a href="#projects" class="neon-link">Projects</a></li>
+            <li><a href="#contact" class="neon-link">Contact</a></li>
+        </ul>
+        <div class="burger" onclick="toggleMenu()">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-grid-overlay"></div>
+        <div class="hero-content">
+            <p class="animated-text-p">>>> Accessing Portfolio_001...</p>
+            <h1 class="glitch-text">Stanley Frankle Lim</h1>
+            <p class="tagline">Web Developer & UI Designer</p>
+            <a href="#projects" class="cta-button neon-btn">View CodeBase <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </header>
+
+    ---
+
+    <section class="section about" id="about">
+        <h2><i class="fas fa-id-card"></i> Profile Saya</h2>
+        <div class="about-container">
+            <div class="about-photo glitch-effect">
+                <img src="poto.jpg" alt="Profile"> 
+            </div>
+            <div class="about-text">
+                <p>
+                    Halo! Nama saya Stanley Frankle Lim. Saya adalah mahasiswa yang bersemangat dalam dunia **Pengembangan Web dan Desain Antarmuka**.
+                    Saya fokus menciptakan situs web yang tidak hanya berfungsi dengan baik (fungsional) tetapi juga memiliki tampilan modern dan pengalaman pengguna yang luar biasa (UI/UX).<br><br>
+                    Saya selalu tertarik untuk belajar teknologi baru dan menerapkannya dalam proyek-proyek yang interaktif dan *eye-catching*.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    ---
+
+    <section class="section skills" id="skills">
+        <h2><i class="fas fa-terminal"></i> My Skills</h2>
+        <div class="skills-grid">
+            
+            <div class="skill-card hover-glow">
+                <i class="fab fa-java"></i>
+                <h3>Java</h3>
+                <p>Pengembangan aplikasi *server-side*, sistem enterprise, dan Android (fundamental).</p>
+            </div>
+
+            <div class="skill-card hover-glow">
+                <i class="fab fa-python"></i>
+                <h3>Python</h3>
+                <p>Scripting otomatisasi, analisis data, dan dasar-dasar pengembangan *back-end* (Django/Flask).</p>
+            </div>
+
+            <div class="skill-card hover-glow">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS3 & SASS</h3>
+                <p>Desain visual canggih, animasi, dan layout responsif modern (Flexbox/Grid).</p>
+            </div>
+            
+        </div>
+    </section>
+
+    ---
+
+    <section class="section projects" id="projects">
+        <h2><i class="fas fa-cubes"></i> Deploy.Projects</h2>
+
+        <div class="project-grid">
+
+            <div class="project-card hover-tilt">
+                <img src="https://cdn.dribbble.com/users/6175319/screenshots/14416250/a_4x.png" alt="Project Portfolio">
+                <div class="project-info">
+                    <h3>[001] Self-Portfolio</h3>
+                    <p>Meta-project showcase built using latest F/E principles.</p>
+                    <button class="view-btn neon-btn" data-title="[001] Self-Portfolio" data-desc="This portfolio itself is a demonstration of responsive design and modern CSS capabilities.">View Details</button>
+                </div>
+            </div>
+
+            <div class="project-card hover-tilt">
+                <img src="https://www.creativefabrica.com/wp-content/uploads/2023/06/13/Travel-website-landing-page-template-Graphics-71987545-1.jpg" alt="Landing Page Travel">
+                <div class="project-info">
+                    <h3>[002] Travel App Landing</h3>
+                    <p>High-conversion landing page designed for travel agency SaaS.</p>
+                    <button class="view-btn neon-btn" data-title="[002] Travel App Landing" data-desc="A highly responsive and visually engaging landing page focusing on maximizing conversion rates.">View Details</button>
+                </div>
+            </div>
+
+            <div class="project-card hover-tilt">
+                <img src="https://cdna.artstation.com/p/assets/images/images/020/643/118/large/halston-stephenson-paod-student-portal-dashboard.jpg?1568618157" alt="Student Dashboard">
+                <div class="project-info">
+                    <h3>[003] Dashboard UI/UX</h3>
+                    <p>Clean and highly functional student management dashboard.</p>
+                    <button class="view-btn neon-btn" data-title="[003] Dashboard UI/UX" data-desc="Focus on clear data visualization and user-friendly interaction for large datasets.">View Details</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    ---
+
+    <section class="section contact" id="contact">
+        <h2><i class="fas fa-satellite-dish"></i> Contact Me</h2>
+        <form class="contact-form" id="contactForm">
+            <input type="text" placeholder="Your Name" required class="holo-input">
+            <input type="email" placeholder="Email Address" required class="holo-input">
+            <input type="text" placeholder="Subject" required class="holo-input">
+            <textarea placeholder="Your Message..." required class="holo-input"></textarea>
+            <button type="submit" class="btn neon-btn">Send</button>
+        </form>
+    </section>
+
+    ---
+
+    <footer>
+        <p>Command Completed. &copy; 2024 Stanley Frankle Lim. | **Code Status: 100% Optimized**</p>
+    </footer>
+
+    <div class="modal" id="successModal">
+        <div class="modal-content holo-modal">
+            <span class="close-button">&times;</span>
+            <h3>✅ Transmission Success!</h3>
+            <p>Your data packet has been received and processed. Awaiting reply...</p>
+            <button class="btn neon-btn close-btn-main">OK</button>
+        </div>
+    </div>
+
+    <div class="modal" id="projectModal">
+        <div class="modal-content holo-modal">
+            <span class="close-button">&times;</span>
+            <h2 id="projectTitle"></h2>
+            <p id="projectDescription"></p>
+            <button class="btn neon-btn close-btn-main">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

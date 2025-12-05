@@ -1,0 +1,533 @@
+/* GLOBAL RESET & FONT */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+}
+
+:root {
+    --neon-blue: #00FFFF; /* Primary Neon Color */
+    --neon-pink: #FF00FF; /* Secondary Neon Color */
+    --bg-dark: #070D17; /* Ultra Dark Background */
+    --bg-medium: #10192A; /* Dark Medium */
+    --text-color: #E0FFFF; /* Light Neon Text */
+    --glitch-shadow-1: 1px 1px 0 var(--neon-blue);
+    --glitch-shadow-2: -1px -1px 0 var(--neon-pink);
+    --glow-shadow: 0 0 10px var(--neon-blue), 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--neon-blue);
+}
+
+.section {
+    padding: 100px 50px;
+    text-align: center;
+    position: relative;
+}
+
+.section h2 {
+    font-size: 3rem;
+    margin-bottom: 60px;
+    color: white;
+    text-shadow: var(--glow-shadow);
+}
+
+.section h2 i {
+    margin-right: 15px;
+    color: var(--neon-pink);
+}
+
+/* --- CORE EFFECTS --- */
+
+/* Glassmorphism Effect */
+.glass-effect {
+    background: rgba(16, 25, 42, 0.3);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+/* Neon Button */
+.neon-btn {
+    background: var(--neon-blue);
+    color: var(--bg-dark) !important;
+    font-weight: 700;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 0 5px var(--neon-blue);
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.neon-btn:hover {
+    background: var(--neon-pink);
+    box-shadow: 0 0 15px var(--neon-pink), 0 0 30px rgba(255, 0, 255, 0.5);
+    transform: scale(1.05);
+}
+
+/* Glitch Text Effect */
+.glitch-text {
+    text-shadow: var(--glitch-shadow-1), var(--glitch-shadow-2);
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 32px;
+}
+
+.navbar .logo span {
+    color: var(--neon-pink);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.neon-link {
+    color: var(--text-color);
+    margin-left: 40px;
+    position: relative;
+    padding: 5px 0;
+    transition: 0.3s;
+}
+
+.neon-link:hover {
+    color: var(--neon-blue);
+    text-shadow: 0 0 8px var(--neon-blue);
+}
+
+/* Burger Menu (Mobile) */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--neon-blue);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-dark);
+}
+
+/* Futuristic Grid Overlay */
+.hero-grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, transparent 24%, rgba(0, 255, 255, 0.1) 25%, rgba(0, 255, 255, 0.1) 26%, transparent 27%),
+                      linear-gradient(90deg, transparent 24%, rgba(0, 255, 255, 0.1) 25%, rgba(0, 255, 255, 0.1) 26%, transparent 27%);
+    background-size: 50px 50px;
+    opacity: 0.3;
+    animation: grid-scan 30s linear infinite;
+}
+
+@keyframes grid-scan {
+    to { background-position: 100% 100%; }
+}
+
+.hero-content {
+    z-index: 10;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: white;
+    margin: 15px 0;
+}
+
+.hero-content .tagline {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: var(--neon-pink);
+}
+
+.animated-text-p {
+    color: var(--neon-blue);
+    animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
+    overflow: hidden; 
+    border-right: .15em solid var(--neon-blue); /* Cursor */
+    white-space: nowrap; 
+    width: 0;
+    margin: 0 auto;
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--neon-blue) }
+}
+
+
+/* --- ABOUT SECTION --- */
+.about {
+    background-color: var(--bg-medium);
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.about-photo {
+    min-width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 3px solid var(--neon-pink);
+    overflow: hidden;
+    box-shadow: 0 0 15px var(--neon-pink);
+    transition: 0.5s;
+}
+
+.about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+    transition: 0.5s;
+}
+
+.about-photo:hover img {
+    filter: brightness(1.2);
+    transform: scale(1.1);
+}
+
+.about-text {
+    text-align: left;
+    max-width: 600px;
+    line-height: 1.8;
+}
+
+.social-links a i {
+    font-size: 2.2rem;
+    transition: 0.3s;
+    text-shadow: var(--glow-shadow);
+}
+.social-links a:hover i {
+    color: var(--neon-pink);
+    text-shadow: 0 0 15px var(--neon-pink);
+}
+
+/* --- SKILLS SECTION --- */
+.skills {
+    background-color: var(--bg-dark);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.skill-card {
+    padding: 35px;
+    border-radius: 12px;
+    background: var(--bg-medium);
+    border: 1px solid rgba(255, 0, 255, 0.2);
+    transition: 0.5s;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(255, 0, 255, 0.2);
+}
+
+/* Holographic/Glow Effect on Hover */
+.hover-glow:hover {
+    transform: translateY(-15px) scale(1.05);
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 25px var(--neon-blue), 0 0 50px rgba(0, 255, 255, 0.3);
+}
+
+.skill-card i {
+    font-size: 3.5rem;
+    color: var(--neon-blue);
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.skill-card h3 {
+    font-size: 1.7rem;
+    color: var(--neon-pink);
+    margin-bottom: 10px;
+}
+
+/* --- PROJECTS SECTION --- */
+.projects {
+    background-color: var(--bg-medium);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.project-card {
+    background: var(--bg-dark);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-align: left;
+}
+
+/* 3D Tilt Hover Effect */
+.hover-tilt:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 255, 255, 0.4);
+}
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    filter: brightness(0.6);
+    transition: 0.5s;
+}
+
+.project-card:hover img {
+    filter: brightness(1);
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--neon-blue);
+}
+
+
+/* --- CONTACT SECTION --- */
+.contact {
+    background-color: var(--bg-dark);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Holographic Input Fields */
+.holo-input {
+    padding: 18px;
+    border-radius: 8px;
+    border: 1px solid var(--neon-pink);
+    background-color: rgba(255, 0, 255, 0.05); /* Slightly pink background */
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.holo-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.holo-input:focus {
+    border-color: var(--neon-blue);
+    outline: none;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+/* --- FOOTER --- */
+footer {
+    padding: 25px;
+    background-color: #03080e;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(0, 255, 255, 0.5);
+    border-top: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+/* --- MODAL/POPUP STYLING --- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+/* Holographic Modal */
+.holo-modal {
+    background: var(--bg-medium);
+    padding: 50px;
+    border-radius: 15px;
+    max-width: 450px;
+    border: 2px solid var(--neon-pink);
+    box-shadow: 0 0 30px var(--neon-pink), 0 0 50px rgba(255, 0, 255, 0.2);
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--neon-blue);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-button:hover {
+    color: var(--neon-pink);
+}
+
+.modal-content h3 {
+    font-size: 28px;
+    color: var(--neon-blue);
+    margin-bottom: 10px;
+}
+
+.modal-content h2 {
+    font-size: 32px;
+    color: var(--neon-pink);
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+
+/* --- MEDIA QUERIES & RESPONSIVENESS --- */
+@media (max-width: 1024px) {
+    .about-container {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .nav-links {
+        position: fixed;
+        right: 0;
+        top: 70px; /* Sesuaikan agar di bawah navbar */
+        background-color: rgba(7, 13, 23, 0.98); /* BG Dark solid */
+        height: calc(100vh - 70px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        padding-top: 50px;
+        z-index: 999;
+    }
+
+    .nav-links.nav-active {
+        transform: translateX(0%);
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+    .neon-link {
+        font-size: 1.5rem;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+    .hero-content .tagline {
+        font-size: 1.2rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-text {
+        text-align: center;
+    }
+    
+    .section {
+        padding: 80px 20px;
+    }
+}
+
+/* Burger Animation */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
